@@ -13,6 +13,7 @@ import SignUp from "../pages/signup/SignUp";
 import MainLayout from "../shared/layouts/MainLayout";
 import ProtecteuserLogged from "../pages/protectedroute/ProtecteuserLogged";
 import ForgetPassword from "../pages/forgetpassword/ForgetPassword";
+import ProfieUpdate from "../pages/profileupdate/ProfieUpdate";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
       {
         path: "/forgetpassword",
         element: <ForgetPassword />,
+      },
+      {
+        path: "/profileupdate",
+        element: <ProfieUpdate />,
       },
     ],
   },
