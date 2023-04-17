@@ -70,7 +70,7 @@ const router = createBrowserRouter([
         element: <ForgetPassword />,
       },
       {
-        path: "/profileupdate",
+        path: "/profileupdate/:id",
         element: <ProfieUpdate />,
       },
     ],

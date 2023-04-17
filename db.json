@@ -12,59 +12,8 @@
       "productname": "test",
       "brandname": "demo",
       "categoryname": "electronics",
-      "price": "666",
-      "image": "C:\\fakepath\\image123.jpeg",
+      "price": "2000",
       "id": 2
-    },
-    {
-      "productname": "test",
-      "brandname": "demo",
-      "categoryname": "electronics",
-      "price": "666",
-      "image": "C:\\fakepath\\image123.jpeg",
-      "id": 3
-    },
-    {
-      "productname": "ccsddsdsd",
-      "brandname": "sdfsdfdfdf",
-      "categoryname": "dsfdfdfdfs",
-      "price": "2000",
-      "id": 4
-    },
-    {
-      "productname": "ccsddsdsd",
-      "brandname": "sdfsdfdfdf",
-      "categoryname": "dsfdfdfdfs",
-      "price": "2000",
-      "id": 5
-    },
-    {
-      "productname": "ccsddsdsd",
-      "brandname": "sdfsdfdfdf",
-      "categoryname": "dsfdfdfdfs",
-      "price": "2000",
-      "id": 6
-    },
-    {
-      "productname": "ccsddsdsd",
-      "brandname": "sdfsdfdfdf",
-      "categoryname": "dsfdfdfdfs",
-      "price": "2000",
-      "id": 7
-    },
-    {
-      "productname": "ccsddsdsd",
-      "brandname": "sdfsdfdfdf",
-      "categoryname": "dsfdfdfdfs",
-      "price": "2000",
-      "id": 8
-    },
-    {
-      "productname": "ccsddsdsd",
-      "brandname": "sdfsdfdfdf",
-      "categoryname": "dsfdfdfdfs",
-      "price": "2000",
-      "id": 9
     }
   ]
 }

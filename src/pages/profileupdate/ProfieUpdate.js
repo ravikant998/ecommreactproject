@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -27,9 +27,10 @@ const schema = yup.object().shape({
 
   phone: yup.string().required("Phone number required").min(8).max(10),
 });
+
 const ProfieUpdate = () => {
-  const [userdata, setUserdata] = useState();
-  console.log("userdata>>>", userdata);
+  const { id } = useParams();
+  console.log("id>>>>>", id);
   const {
     register,
     handleSubmit,
@@ -38,14 +39,14 @@ const ProfieUpdate = () => {
     resolver: yupResolver(schema),
   });
 
+  let userdetails = JSON.parse(localStorage.getItem("usersignup"));
+  //   console.log("userdetails>>", userdetails);
+
   useEffect(() => {
-    let userdetails = JSON.parse(localStorage.getItem("usersignup"));
-    // console.log("userdetails>>", userdetails);
-    userdetails.forEach((value) => {
-      console.log("valuehfhfhf>>>", value);
-      setUserdata(value);
+    userdetails.forEach((element) => {
+      console.log("element>>>", element.id);
     });
-  }, []);
+  });
 
   const onSubmitHandler = () => {
     alert("ravi");
@@ -55,16 +56,16 @@ const ProfieUpdate = () => {
       <div className="w-full max-w-md space-y-8">
         <div>
           <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-            Signup in to your account
+            User profile update
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
+          {/* <p className="mt-2 text-center text-sm text-gray-600">
             <Link
               href="signup"
               className="font-medium text-indigo-600 hover:text-indigo-500"
             >
-              Sign Up
+              Update profile
             </Link>
-          </p>
+          </p> */}
         </div>
 
         <form
@@ -79,10 +80,9 @@ const ProfieUpdate = () => {
               </label>
               <div>
                 <input
-                  id="name"
+                  //   id="name"
                   name="name"
                   type="text"
-                  value={userdata?.name}
                   {...register("name")}
                   className="relative block w-full appearance-none rounded-none 
             rounded-t-md border border-gray-300 px-3 py-2 text-gray-900
@@ -124,7 +124,6 @@ const ProfieUpdate = () => {
               <input
                 id="email-address"
                 name="email"
-                value={userdata?.email}
                 {...register("email")}
                 type="email"
                 className="relative block w-full appearance-none rounded-none 
@@ -145,7 +144,6 @@ const ProfieUpdate = () => {
               <input
                 id="password"
                 name="password"
-                value={userdata?.password}
                 {...register("password")}
                 type="password"
                 className="relative block w-full appearance-none rounded-none rounded-b-md 
@@ -165,7 +163,6 @@ const ProfieUpdate = () => {
               <input
                 id="phone"
                 name="phone"
-                value={userdata?.phone}
                 {...register("phone")}
                 type="number"
                 className="relative block w-full appearance-none rounded-none 
@@ -185,7 +182,6 @@ const ProfieUpdate = () => {
               <input
                 id="dob"
                 name="dob"
-                value={userdata?.dob}
                 {...register("dob")}
                 type="date"
                 className="relative block w-full appearance-none rounded-none 
@@ -216,8 +212,8 @@ const ProfieUpdate = () => {
                   );
                 })}
               </select>
-            </div>
-            <div>
+            </div> */}
+            {/* <div>
               <label className="sr-only">Please select state </label>
               <select
                 name="statename"
@@ -236,8 +232,8 @@ const ProfieUpdate = () => {
                   );
                 })}
               </select>
-            </div>
-            <div>
+            </div> */}
+            {/* <div>
               <label className="sr-only">Please select city </label>
               <select
                 name="cityname"

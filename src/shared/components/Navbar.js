@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import {
-  AiOutlineShoppingCart,
-  AiFillCloseCircle,
-  AiOutlinePlusCircle,
-  AiOutlineMinusCircle,
-  AiOutlineLogout,
-} from "react-icons/ai";
+import { AiOutlineShoppingCart, AiOutlineLogout } from "react-icons/ai";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
@@ -21,23 +15,18 @@ function classNames(...classes) {
 const Navbar = () => {
   const navigate = useNavigate();
   const [status, setStatus] = useState();
-  const [username, setUsername] = useState();
 
   useEffect(() => {
     let user = localStorage.getItem("userlogin");
     setStatus(user);
   });
 
-  useEffect(() => {
-    let userdata = JSON.parse(localStorage.getItem("usersignup"));
-    userdata?.forEach((val) => {
-      setUsername(val);
-    });
-  }, []);
+  const userdata = JSON.parse(localStorage.getItem("usersignup"));
 
   const logouthandler = () => {
     localStorage.removeItem("userlogin");
     setStatus(false);
+
     navigate("/");
   };
 
@@ -95,15 +84,14 @@ const Navbar = () => {
             <Menu as="div" className="relative inline-block text-left">
               <div>
                 <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-                  {/* Options */}
-                  {username.name}
+                  Options
+                  {/* {userdata.name} */}
                   <ChevronDownIcon
                     className="-mr-1 h-5 w-5 text-gray-400"
                     aria-hidden="true"
                   />
                 </Menu.Button>
               </div>
-
               <Transition
                 as={Fragment}
                 enter="transition ease-out duration-100"
@@ -118,7 +106,7 @@ const Navbar = () => {
                     <Menu.Item>
                       {({ active }) => (
                         <Link
-                          to="profileupdate"
+                          to={`/profileupdate/${userdata.id}`}
                           className={classNames(
                             active
                               ? "bg-gray-100 text-gray-900"

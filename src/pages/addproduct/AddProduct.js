@@ -15,7 +15,7 @@ const AddProduct = () => {
     axios.post("http://localhost:3000/products", inputData).then((res) => {
       console.log(res);
     });
-    navigate("/addproduct");
+    navigate("/");
   };
 
   return (
