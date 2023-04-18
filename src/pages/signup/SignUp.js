@@ -87,12 +87,12 @@ const schema = yup.object().shape({
     .max(32, "Password must not exceed 20 characters")
     .required("Please enter the password"),
 
-  phone: yup.string().required("Phone number required").min(8).max(10),
+  phone: yup.string().required("Phone number is required").min(8).max(10),
   // file: yup.string().required("Please uplaod image"),
   countryname: yup.string().required("Please select state"),
   statename: yup.string().required("Please select state"),
   cityname: yup.string().required("Please select state"),
-  dob: yup.string().required("Date of birth required"),
+  dob: yup.string().required("Date of birth is required"),
 });
 
 const SignUp = () => {

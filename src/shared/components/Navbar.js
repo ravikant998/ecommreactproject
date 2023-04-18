@@ -22,6 +22,7 @@ const Navbar = () => {
   });
 
   const userdata = JSON.parse(localStorage.getItem("usersignup"));
+  // console.log("userdata", userdata);
 
   const logouthandler = () => {
     localStorage.removeItem("userlogin");
@@ -62,14 +63,9 @@ const Navbar = () => {
       <div>
         <button onClick={handlerCarrier}>Carrier</button>
       </div>
-
-      {/* <div className="mx-4">
-        <ul>
-          <li>About</li>
-          <li>About</li>
-          <li>About</li>
-        </ul>
-      </div> */}
+      <div className="mx-4">
+        <Link to="/multiform">MultiStepForm</Link>
+      </div>
 
       <div className=" cursor-pointer cart absolute right-0 top-4 mx-5 flex">
         {!status ? (

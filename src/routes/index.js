@@ -14,6 +14,7 @@ import MainLayout from "../shared/layouts/MainLayout";
 import ProtecteuserLogged from "../pages/protectedroute/ProtecteuserLogged";
 import ForgetPassword from "../pages/forgetpassword/ForgetPassword";
 import ProfieUpdate from "../pages/profileupdate/ProfieUpdate";
+import MultiStepForm from "../pages/multistepform/MultiStepForm";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
       {
         path: "/forgetpassword",
         element: <ForgetPassword />,
+      },
+      {
+        path: "/multiform",
+        element: <MultiStepForm />,
       },
       {
         path: "/profileupdate/:id",
