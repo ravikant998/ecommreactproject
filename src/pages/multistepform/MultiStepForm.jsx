@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ContactInfo from "../../shared/components/multiform/ContactInfo";
 import LocationInfo from "../../shared/components/multiform/LocationInfo";
@@ -16,7 +17,8 @@ const MultiStepForm = () => {
     city: "",
   });
   const [step, setStep] = useState(1);
-
+  const [useremail, setuseremail] = useState([]);
+  console.log("useremail>>>", useremail);
   const handleChange = (e) => {
     const name = e.target.name;
     const value =
@@ -26,9 +28,37 @@ const MultiStepForm = () => {
       [name]: value,
     });
   };
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("multiform"));
+    // console.log("datatatata>>>", data);
+    const userArray = [];
+    data?.forEach((val) => {
+      userArray.push(val);
+    });
+    setuseremail(userArray);
+  }, []);
+
   const nextStep = () => {
+    // console.log("signupForm", signupForm);
     if (step === 3) {
-      console.log("jfjdfj");
+      const localStorageData = JSON.parse(
+        localStorage.getItem("multiform") || []
+      );
+      console.log("localStorageData>>>", localStorageData);
+      // if (useremail.find((email) => email === localStorageData.email)){
+
+      // }
+      localStorage.setItem(
+        "multiform",
+        JSON.stringify([
+          ...localStorageData,
+          {
+            id: localStorageData.length + 1,
+            ...signupForm,
+          },
+        ])
+      );
     } else {
       setStep((prevStep) => {
         return prevStep + 1;

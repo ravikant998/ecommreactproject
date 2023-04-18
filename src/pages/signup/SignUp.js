@@ -102,10 +102,6 @@ const SignUp = () => {
   const [selectedCity, setSelectedCity] = useState();
   const [userEmailId, setUserEmailId] = useState([]);
   console.log("userEmailId-->", userEmailId);
-  const [range, setRange] = useState({
-    startDate: new Date(),
-    endDate: new Date(),
-  });
 
   const availableState = data.countries.find(
     (value) => value.name === selectedCountry
