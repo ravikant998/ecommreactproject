@@ -17,8 +17,8 @@ const MultiStepForm = () => {
     city: "",
   });
   const [step, setStep] = useState(1);
-  const [useremail, setuseremail] = useState([]);
-  console.log("useremail>>>", useremail);
+  const [userEmail, setuserEmail] = useState();
+
   const handleChange = (e) => {
     const name = e.target.name;
     const value =
@@ -30,41 +30,44 @@ const MultiStepForm = () => {
   };
 
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("multiform"));
-    // console.log("datatatata>>>", data);
-    const userArray = [];
-    data?.forEach((val) => {
-      userArray.push(val);
+    let userdata = JSON.parse(localStorage.getItem("multiform"));
+    let userArray = [];
+    userdata?.forEach((val) => {
+      let valdata = val.email;
+      userArray.push(valdata);
     });
-    setuseremail(userArray);
+    setuserEmail(userArray);
   }, []);
 
+  // Next step
   const nextStep = () => {
     // console.log("signupForm", signupForm);
-    if (step === 3) {
-      const localStorageData = JSON.parse(
-        localStorage.getItem("multiform") || []
-      );
-      console.log("localStorageData>>>", localStorageData);
-      // if (useremail.find((email) => email === localStorageData.email)){
 
-      // }
-      localStorage.setItem(
-        "multiform",
-        JSON.stringify([
-          ...localStorageData,
-          {
-            id: localStorageData.length + 1,
-            ...signupForm,
-          },
-        ])
-      );
+    if (step === 3) {
+      let multiformdata = JSON.parse(localStorage.getItem("multiform")) || [];
+      if (userEmail?.find((email) => email === signupForm.email)) {
+        alert("user already exit");
+      } else {
+        localStorage.setItem(
+          "multiform",
+          JSON.stringify([
+            ...multiformdata,
+            {
+              id: multiformdata.length + 1,
+              ...signupForm,
+            },
+          ])
+        );
+      }
+      navigate("/");
     } else {
       setStep((prevStep) => {
         return prevStep + 1;
       });
     }
   };
+
+  // Back Step
   const backStep = () => {
     setStep((prevStep) => {
       return prevStep - 1;

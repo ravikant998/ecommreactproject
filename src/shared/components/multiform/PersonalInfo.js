@@ -1,7 +1,7 @@
 import React from "react";
 
 const PersonalInfo = (props) => {
-  //   console.log("props", props);
+  console.log("props", props);
   const { firstname, lastname, gender } = props.signupForm;
   return (
     <div>
@@ -16,6 +16,7 @@ const PersonalInfo = (props) => {
               id="firstname"
               name="firstname"
               type="text"
+              required
               value={firstname}
               onChange={props.handleChange}
               className="relative block w-full appearance-none rounded-none 
@@ -35,6 +36,7 @@ const PersonalInfo = (props) => {
               id="lastname"
               name="lastname"
               type="text"
+              required
               value={lastname}
               onChange={props.handleChange}
               className="relative block w-full appearance-none rounded-none 
