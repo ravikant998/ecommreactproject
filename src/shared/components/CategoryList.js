@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 const CategoryList = (data) => {
   const catdata = data;
   const [catlist, setCatlist] = useState([]);
-  //   console.log("catlist>>>>", catlist);
   useEffect(() => {
     setCatlist(catdata);
   }, []);

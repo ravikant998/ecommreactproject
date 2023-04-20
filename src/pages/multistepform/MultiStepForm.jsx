@@ -41,8 +41,6 @@ const MultiStepForm = () => {
 
   // Next step
   const nextStep = () => {
-    // console.log("signupForm", signupForm);
-
     if (step === 3) {
       let multiformdata = JSON.parse(localStorage.getItem("multiform")) || [];
       if (userEmail?.find((email) => email === signupForm.email)) {

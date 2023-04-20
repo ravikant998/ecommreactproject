@@ -14,6 +14,14 @@
       "categoryname": "electronics",
       "price": "2000",
       "id": 2
+    },
+    {
+      "productname": "ggggg",
+      "brandname": "dsfdff",
+      "categoryname": "electronics",
+      "price": "1999",
+      "description": "",
+      "id": 3
     }
   ]
 }

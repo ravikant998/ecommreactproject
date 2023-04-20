@@ -8,9 +8,7 @@ import { productDetail } from "../../shared/store/slices/productdetailsSlice";
 const ProductDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  //   console.log("id>>>", id);
   const data = useSelector((state) => state.productdetail);
-  //   console.log("data", data);
   useEffect(() => {
     if (id) dispatch(productDetail(id));
   }, [id]);

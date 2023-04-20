@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from "react";
 
 const ImageSlider = ({ data }) => {
-  //   console.log("data>>>", data);
   const [imageData, setimageData] = useState();
-  //   console.log("imageData>>>", imageData);
+
   useEffect(() => {
     setimageData(data?.images?.[0]);
   }, [data]);
 
   const handleClick = (index) => {
-    // console.log("index>>>", index);
     const imageClick = data.images[index];
-    // console.log("imageClick>>>", imageClick);
+
     setimageData(imageClick);
   };
   return (
@@ -25,7 +23,6 @@ const ImageSlider = ({ data }) => {
       />
       <div className="flex mt-5">
         {data?.images?.map((image, i) => {
-          // console.log("image>>>>",image)
           return (
             <div key={i}>
               <img

@@ -4,10 +4,8 @@ import { searchdata } from "../../api/endpoints";
 
 const initialState = [];
 export const searchproduct = createAsyncThunk("search", async (searchInput) => {
-  //   console.log("searchInput>>>", searchInput);
   const response = await Api.get(`${searchdata}?q=${searchInput}`).then(
     (res) => {
-      //   console.log("res>>>", res);
       return res.data;
     }
   );

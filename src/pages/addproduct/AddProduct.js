@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { CKEditor } from "ckeditor4-react";
 const AddProduct = () => {
   const navigate = useNavigate();
   const [inputData, setInputData] = useState({
@@ -9,13 +9,18 @@ const AddProduct = () => {
     brandname: "",
     categoryname: "",
     price: "",
+    description: "",
   });
+  console.log("inputData>>>", inputData);
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post("http://localhost:3000/products", inputData).then((res) => {
       console.log(res);
     });
     navigate("/");
+  };
+  const onChangeDescription = (e) => {
+    console.log("e>>>", e.editor);
   };
 
   return (
@@ -106,7 +111,7 @@ const AddProduct = () => {
             </label>
           </div>
         </div>
-
+        <CKEditor onChange={onChangeDescription} />
         <button
           type="submit"
           disabled={!inputData}

@@ -30,7 +30,6 @@ const Login = () => {
   });
 
   const onSubmitHandler = (data) => {
-    console.log("data-->", data);
     let user = JSON.parse(localStorage.getItem("usersignup"));
     let x = true;
     user?.forEach((element) => {

@@ -2,7 +2,6 @@ import React from "react";
 
 const BrandList = ({ props }) => {
   const data = props;
-  // console.log("data>>>", data);
   return (
     <div>
       <h1>Show by Category</h1>

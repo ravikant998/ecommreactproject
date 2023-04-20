@@ -30,7 +30,6 @@ const schema = yup.object().shape({
 
 const ProfieUpdate = () => {
   const { id } = useParams();
-  console.log("id>>>>>", id);
   const {
     register,
     handleSubmit,
@@ -40,12 +39,9 @@ const ProfieUpdate = () => {
   });
 
   let userdetails = JSON.parse(localStorage.getItem("usersignup"));
-  //   console.log("userdetails>>", userdetails);
 
   useEffect(() => {
-    userdetails.forEach((element) => {
-      console.log("element>>>", element.id);
-    });
+    userdetails.forEach((element) => {});
   });
 
   const onSubmitHandler = () => {
@@ -224,7 +220,7 @@ const ProfieUpdate = () => {
               >
                 <option>Choose State</option>
                 {availableState?.states.map((value, key) => {
-                  // console.log("value>>>", value);
+                 
                   return (
                     <option value={value.name} key={key}>
                       {value.name}

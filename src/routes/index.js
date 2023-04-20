@@ -15,6 +15,7 @@ import ProtecteuserLogged from "../pages/protectedroute/ProtecteuserLogged";
 import ForgetPassword from "../pages/forgetpassword/ForgetPassword";
 import ProfieUpdate from "../pages/profileupdate/ProfieUpdate";
 import MultiStepForm from "../pages/multistepform/MultiStepForm";
+import DynemicInputForm from "../pages/dynemicform/DynemicInputForm";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
       {
         path: "/profileupdate/:id",
         element: <ProfieUpdate />,
+      },
+      {
+        path: "/dynemicinputform",
+        element: <DynemicInputForm />,
       },
     ],
   },

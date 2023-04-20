@@ -10,13 +10,13 @@ import BrandList from "./BrandList";
 const Header = () => {
   const dispatch = useDispatch();
   const [showcategory, setShowCategory] = useState();
-  // console.log("showcategory>>>", showcategory);
+
   const [showbrand, setShowbrand] = useState();
 
   const allData = useSelector((state) => state.productdata);
 
   const categorylist = allData?.products?.map((data) => data.category);
-  // console.log("categorylist>>>", categorylist);
+
   const brandlist = allData?.products?.map((data) => data.brand);
 
   // Remove duplicate element from data
@@ -34,7 +34,6 @@ const Header = () => {
       uniquebrand.push(brand);
     }
   });
-  // console.log("uniquebrand>>>", uniquebrand);
 
   useEffect(() => {
     setShowCategory(uniqueCategories);

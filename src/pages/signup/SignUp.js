@@ -65,7 +65,6 @@ const data = {
     },
   ],
 };
-// console.log("data", data);
 const schema = yup.object().shape({
   name: yup
     .string()
@@ -101,7 +100,6 @@ const SignUp = () => {
   const [selectedState, setSelectedState] = useState();
   const [selectedCity, setSelectedCity] = useState();
   const [userEmailId, setUserEmailId] = useState([]);
-  // console.log("userEmailId-->", userEmailId);
 
   const availableState = data.countries.find(
     (value) => value.name === selectedCountry
@@ -130,7 +128,6 @@ const SignUp = () => {
 
   const onSubmitHandler = async (data) => {
     const signupdata = JSON.parse(localStorage.getItem("usersignup")) || [];
-    // console.log("signupdata>>>", signupdata);
     if (userEmailId?.find((email) => email === data.email)) {
       alert("You are already exit");
     } else {
@@ -336,7 +333,6 @@ const SignUp = () => {
               >
                 <option>Choose State</option>
                 {availableState?.states.map((value, key) => {
-                  // console.log("value>>>", value);
                   return (
                     <option value={value.name} key={key}>
                       {value.name}

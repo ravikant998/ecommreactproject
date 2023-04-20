@@ -1,7 +1,6 @@
 import React from "react";
 
 const PersonalInfo = (props) => {
-  console.log("props", props);
   const { firstname, lastname, gender } = props.signupForm;
   return (
     <div>
@@ -55,6 +54,7 @@ const PersonalInfo = (props) => {
             <option value="female">Female</option>
           </select>
         </div>
+        <button onClick={props.addmore}>Add More</button>
       </div>
     </div>
   );

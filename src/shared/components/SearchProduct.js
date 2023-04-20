@@ -8,7 +8,6 @@ const SearchProduct = () => {
   const navigate = useNavigate();
   const [searchInput, setSearchInput] = useState();
   const [listproduct, setListproduct] = useState();
-  // console.log("listproduct>>>", listproduct);
   const searchdata = useSelector((state) => state.searchproductdata);
 
   const onChangeHandler = (e) => {

@@ -1,7 +1,6 @@
 import React from "react";
 
 const ContactInfo = (props) => {
-  //   console.log("props>>>>", props);
   const { email, phone } = props.signupForm;
   return (
     <div>
@@ -44,6 +43,11 @@ const ContactInfo = (props) => {
               placeholder="Phone number"
             />
           </div>
+        </div>
+        <div>
+          <label htmlFor="email-address" className="sr-only">
+            Message
+          </label>
         </div>
       </div>
     </div>

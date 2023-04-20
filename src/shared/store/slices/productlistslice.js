@@ -5,7 +5,6 @@ import { product } from "../../api/endpoints";
 const initialState = [];
 export const productlist = createAsyncThunk("product", async () => {
   const response = await Api.get(product).then((res) => {
-    // console.log("res>>>", res);
     return res.data;
   });
   return response;
