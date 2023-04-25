@@ -16,6 +16,8 @@ import ForgetPassword from "../pages/forgetpassword/ForgetPassword";
 import ProfieUpdate from "../pages/profileupdate/ProfieUpdate";
 import MultiStepForm from "../pages/multistepform/MultiStepForm";
 import DynemicInputForm from "../pages/dynemicform/DynemicInputForm";
+import FormMultiStep from "../pages/multistepform/FormMultiStep";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -82,6 +84,11 @@ const router = createBrowserRouter([
       {
         path: "/dynemicinputform",
         element: <DynemicInputForm />,
+      },
+
+      {
+        path: "/formmultistep",
+        element: <FormMultiStep />,
       },
     ],
   },

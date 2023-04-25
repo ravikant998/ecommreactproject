@@ -64,9 +64,12 @@ const Navbar = () => {
       <div className="mx-4">
         <Link to="/multiform">MultiStepForm</Link>
       </div>
-      <div className="mx-4">
+      {/* <div className="mx-4">
         <Link to="/dynemicinputform">DynemicInputForm</Link>
-      </div>
+      </div> */}
+      {/* <div className="mx-4">
+        <Link to="/formmultistep">FormMultiStep</Link>
+      </div> */}
       <div className=" cursor-pointer cart absolute right-0 top-4 mx-5 flex">
         {!status ? (
           <Link to={"/login"}>

@@ -10,22 +10,26 @@ const AddProduct = () => {
     brandname: "",
     categoryname: "",
     price: "",
+  });
+
+  const [descInput, setDescInput] = useState({
     description: "",
   });
-  console.log("inputData>>>", inputData);
-
+  console.log("descInput>>>>", descInput);
   const handleSubmit = (e) => {
     console.log("e>>>", e);
     e.preventDefault();
-    axios.post("http://localhost:3000/products", inputData).then((res) => {
-      console.log(res);
-    });
+    axios
+      .post("http://localhost:3000/products", inputData, descInput)
+      .then((res) => {
+        console.log(res);
+      });
     // navigate("/");
   };
 
   const onChangeDescription = (event) => {
     let newContent = event.editor.getData();
-    setInputData({ ...inputData, description: newContent });
+    setDescInput({ ...descInput, description: newContent });
   };
 
   return (
@@ -117,15 +121,9 @@ const AddProduct = () => {
           </div>
         </div>
         <div className="">Please share a short description of your item</div>
-        {/* <textarea
-          placeholder="Enter product details"
-          onChange={(e) =>
-            setInputData({ ...inputData, description: e.target.value })
-          }
-        /> */}
 
         <CKEditor
-          data={inputData.description}
+          data={descInput.description}
           initData="Hello from CKEditor 4!"
           onChange={onChangeDescription}
         />

@@ -1,44 +1,11 @@
 {
   "products": [
     {
-      "productname": "",
-      "brandname": "",
-      "categoryname": "",
-      "price": "",
-      "description": "<p>gggggggg</p>\n",
+      "productname": "tttt",
+      "brandname": "xcxcxc",
+      "categoryname": "electronics",
+      "price": "1999",
       "id": 1
-    },
-    {
-      "productname": "",
-      "brandname": "",
-      "categoryname": "",
-      "price": "",
-      "description": "<p>gggggggg</p>\n",
-      "id": 2
-    },
-    {
-      "productname": "",
-      "brandname": "",
-      "categoryname": "",
-      "price": "645",
-      "description": "<p>Hello from CKEditor 4!wegwegweg</p>\n",
-      "id": 3
-    },
-    {
-      "productname": "",
-      "brandname": "",
-      "categoryname": "",
-      "price": "645",
-      "description": "<p>Hello from CKEditor 4!wegwegweg</p>\n",
-      "id": 4
-    },
-    {
-      "productname": "",
-      "brandname": "",
-      "categoryname": "",
-      "price": "",
-      "description": "<p>ggggg</p>\n",
-      "id": 5
     }
   ]
 }
