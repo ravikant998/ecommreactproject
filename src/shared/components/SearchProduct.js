@@ -5,7 +5,6 @@ import { searchproduct } from "../store/slices/searchproductsSlice";
 
 const SearchProduct = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const [searchInput, setSearchInput] = useState();
   const [listproduct, setListproduct] = useState();
   const searchdata = useSelector((state) => state.searchproductdata);
@@ -41,6 +40,7 @@ const SearchProduct = () => {
       </div>
       {searchInput?.length > 1 &&
         listproduct?.products?.map((items, index) => {
+          // console.log("items>>>", items);
           return (
             <div key={index}>
               <ul>

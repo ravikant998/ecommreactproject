@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useEffect, useState } from "react";
 
-const data = {
+const location = {
   countries: [
     {
       name: "Germany",
@@ -101,7 +101,7 @@ const SignUp = () => {
   const [selectedCity, setSelectedCity] = useState();
   const [userEmailId, setUserEmailId] = useState([]);
 
-  const availableState = data.countries.find(
+  const availableState = location.countries.find(
     (value) => value.name === selectedCountry
   );
 
@@ -142,7 +142,6 @@ const SignUp = () => {
         ])
       );
     }
-
     navigate("/login");
   };
   const alreadyAccount = () => {
@@ -313,7 +312,7 @@ const SignUp = () => {
                 onChange={(e) => setSelectedCountry(e.target.value)}
               >
                 <option>Choose Country</option>
-                {data.countries.map((value, key) => {
+                {location.countries.map((value, key) => {
                   return (
                     <option value={value.name} key={key}>
                       {value.name}

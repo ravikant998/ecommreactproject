@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const ImageSlider = ({ data }) => {
+  console.log("datatywttet>>>", data);
   const [imageData, setimageData] = useState();
 
   useEffect(() => {

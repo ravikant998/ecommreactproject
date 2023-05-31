@@ -9,6 +9,7 @@ const Homepage = () => {
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
   const productdata = useSelector((state) => state.productdata);
+  // console.log("productdata>>>", productdata);
   useEffect(() => {
     setIsLoading(true);
     dispatch(productlist());
